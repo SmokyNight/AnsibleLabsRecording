@@ -1,0 +1,6 @@
+  - name: "Simple hello world playbook"
+    hosts: "{{hosts}}"
+    tasks: 
+    - name: My first print
+      debug:
+        msg: "Hello world!"
