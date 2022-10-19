@@ -1,0 +1,4 @@
+  - name: "My first ansible playbook"
+    hosts: localhost
+    connection: local
+    tasks:
