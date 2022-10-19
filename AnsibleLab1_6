@@ -1,0 +1,7 @@
+  - name: "Simple hello world playbook"
+    hosts: localhost
+    connection: local
+    tasks: 
+    - name: My first print
+      debug:
+        msg: "Hello world!"
