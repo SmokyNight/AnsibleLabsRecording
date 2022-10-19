@@ -1,0 +1,20 @@
+  - name: "Playbook to install gradle"
+    hosts: "{{hosts}}"
+    tasks: 
+    
+    - name: ansible create gradle
+      file:
+        path: /tmp/sahlovs/gradle
+        state: directory
+        
+    - name: download gradle
+      get_url: 
+        url: https://services.gradle.org/distributions/gradle-8.0-milestone-2-docs.zip 
+        dest: /tmp/sahlovs
+        
+    - name: Unarchive a file that is already on the remote machine
+      ansible.builtin.unarchive: 
+        src: /tmp/sahlovs/gradle-8.0-milestone-2-docs.zip 
+        dest: /tmp/sahlovs/gradle 
+        remote_src: yes
+        
