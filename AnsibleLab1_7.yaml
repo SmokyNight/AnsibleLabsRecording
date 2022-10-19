@@ -4,4 +4,4 @@
     tasks: 
     - name: Function to print exact text passed as a parameter
       debug:
-        msg: ""{{textToPrint}}""
+        msg: "{{textToPrint}}"
