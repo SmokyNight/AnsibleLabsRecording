@@ -1,0 +1,7 @@
+  - name: "Simple hello world playbook"
+    hosts: localhost
+    connection: local
+    tasks: 
+    - name: Function to print exact text passed as a parameter
+      debug:
+        msg: ""{{textToPrint}}""
