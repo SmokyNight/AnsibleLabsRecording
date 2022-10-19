@@ -1,0 +1,34 @@
+  - name: "Playbook to install javadns library"
+    hosts: "{{hosts}}"
+    vars:
+      extracted_hosts: "{{hosts}}"
+    tasks: 
+    
+    - name: ansible create directory example
+      file:
+        path: /tmp/sahlovs/java_dns
+        state: directory
+        
+    - name: download javadns sources
+      get_url: 
+        url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.0/dnsjava-3.5.0.jar 
+        dest: /tmp/sahlovs/java_dns
+     
+     - name: ansible create gradle
+      file:
+        path: /tmp/sahlovs/gradle
+        state: directory
+      when: extracted_hosts == "backEndServers"
+        
+    - name: download gradle
+      get_url: 
+        url: https://services.gradle.org/distributions/gradle-8.0-milestone-2-docs.zip 
+        dest: /tmp/sahlovs
+      when: extracted_hosts == "backEndServers"
+        
+    - name: Unarchive a file that is already on the remote machine
+      ansible.builtin.unarchive: 
+        src: /tmp/sahlovs/gradle-8.0-milestone-2-docs.zip 
+        dest: /tmp/sahlovs/gradle 
+        remote_src: yes
+      when: extracted_hosts == "backEndServers"
