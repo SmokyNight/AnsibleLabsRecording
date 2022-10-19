@@ -1,6 +1,6 @@
- - name: "Simple hello world playbook"
+  - name: "Playbook to install javadns library"
     hosts: "{{hosts}}"
-    tasks:
+    tasks: 
     
     - name: ansible create directory example
       file:
