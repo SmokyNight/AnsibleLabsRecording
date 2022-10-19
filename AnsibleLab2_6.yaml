@@ -14,7 +14,7 @@
         url: https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.0/dnsjava-3.5.0.jar 
         dest: /tmp/sahlovs/java_dns
      
-     - name: ansible create gradle
+    - name: ansible create gradle
       file:
         path: /tmp/sahlovs/gradle
         state: directory
